@@ -13,8 +13,20 @@ window.onscroll = function() {
     }
   }
 };
+// #-2 Add The active Class To The Clicked iIem In The NavBar
+const navBarCont = document.querySelector(".navbar-ul");
+const aCont = navBarCont.querySelectorAll("a");
 
-// #-2 Show and Hide Mobile NavBar
+aCont.forEach(function(aitem) {
+  aitem.addEventListener("click", function() {
+    for (let i = 0; i < aCont.length; i++) {
+      aCont[i].classList.remove("active");
+    }
+    this.classList.add("active");
+  });
+});
+
+// #-3 Show and Hide Mobile NavBar
 
 // The Environement
 const hamburgerMenu = document.querySelector(".hamburger-menu");
@@ -32,7 +44,7 @@ function handleNav() {
       .querySelector(".hamburger-menu .div2")
       .classList.add("active-div2");
     hamburgerMenu.style.backgroundColor = " #febd01";
-    document.querySelector(".navbar ul li a").classList.remove("active");
+    // document.querySelector(".navbar ul li a").classList.remove("active");
   } else {
     navBar.classList.remove("navbar-active");
     document
@@ -42,14 +54,14 @@ function handleNav() {
       .querySelector(".hamburger-menu .div2")
       .classList.remove("active-div2");
     hamburgerMenu.style.backgroundColor = " #fff";
-    document.querySelector(".navbar ul li a").classList.add("active");
+    // document.querySelector(".navbar ul li a").classList.add("active");
   }
 }
 
 // The Event
 hamburgerMenu.addEventListener("click", handleNav);
 
-// #-3 Show and Hide Sign-Up Form
+// #-4 Show and Hide Sign-Up Form
 
 // The Environement
 const signUpBtn = document.querySelector(".sign");
@@ -58,14 +70,14 @@ const formCloseBtn = document.querySelector(".form-close-btn");
 const formSignUpBtn = document.querySelector(".form-body-btn");
 const newAccountBtn = document.querySelector(".new-account-btn");
 
-// #-3-1 Show Sign-Up Form
+// #-4-1 Show Sign-Up Form
 // The Event
 signUpBtn.addEventListener("click", showForm);
 // The Function
 function showForm() {
   signUpForm.style.transform = "translateY(0%)";
 }
-// #-3-2 Hide Sign-Up Form
+// #-4-2 Hide Sign-Up Form
 // The Event
 formCloseBtn.addEventListener("click", hideForm);
 formSignUpBtn.addEventListener("click", hideForm);
@@ -75,7 +87,7 @@ function hideForm() {
   signUpForm.style.transform = "translateY(-120%)";
 }
 
-// #-4 Switch Between Sign-Up Form and New Account Form
+// #-5 Switch Between Sign-Up Form and New Account Form
 
 const navSignUp = document.querySelector(".form-nav-sign-up");
 const navNewAccount = document.querySelector(".form-nav-new-account");
@@ -102,14 +114,50 @@ function accountSign() {
     .classList.remove("form-nav-active");
 }
 // ------------------------------
+const formBody = document.querySelector(" .form-body");
+const formFooter = document.querySelector(" .form-footer");
+const registerContainer = document.querySelector(".register-container");
 
 navNewAccount.addEventListener("click", function() {
-  document.querySelector(" .form-body").style.display = "none";
-  document.querySelector(" .form-footer").style.display = "none";
-  document.querySelector(".register-container").style.display = "flex";
+  formBody.style.display = "none";
+  formFooter.style.display = "none";
+  registerContainer.style.display = "flex";
 });
+
 navSignUp.addEventListener("click", function() {
-  document.querySelector(" .form-body").style.display = "flex";
-  document.querySelector(" .form-footer").style.display = "flex";
-  document.querySelector(".register-container").style.display = "none";
+  formBody.style.display = "flex";
+  formFooter.style.display = "flex";
+  registerContainer.style.display = "none";
 });
+
+// #-6 Drop-Down menu hover
+if (window.innerWidth > 720) {
+  document
+    .querySelector(".dp-container  ")
+    .addEventListener("mouseover", function() {
+      document.querySelector(".dp-items").style.display = "flex";
+    });
+
+  document.querySelector(".dp-items").addEventListener("mouseout", function() {
+    document.querySelector(".dp-items").style.display = "none";
+  });
+  document.querySelector(".hero").addEventListener("mouseout", function() {
+    document.querySelector(".dp-items").style.display = "none";
+  });
+} else {
+  document
+    .querySelector(".dp-container")
+    .addEventListener("mouseover", function() {
+      document.querySelector(".dp-items").style.display = "block";
+      document.querySelector(".dp-items").style.width = "200px";
+      document.querySelector(".dp-items").style.top = "5px";
+      document.querySelector(".dp-items").style.left = "-220px";
+    });
+
+  document.querySelector(".dp-items").addEventListener("mouseout", function() {
+    document.querySelector(".dp-items").style.display = "none";
+  });
+  document.querySelector(".hero").addEventListener("mouseout", function() {
+    document.querySelector(".dp-items").style.display = "none";
+  });
+}

@@ -28,7 +28,7 @@ a {
 }
 /* ----- End Global Styles ----- */
 body {
-  height: 2000px;
+  height: 3000px;
   overflow-x: hidden;
 }
 .header-hero-container {
@@ -150,6 +150,43 @@ body {
 .header.fixed .navbar-ul li a::before {
   background-color: var(--blackColor);
 }
+/*Dropdown Menu */
+.navbar-ul .dp-container {
+  position: relative;
+}
+
+.navbar-ul .dp-container .dp-items {
+  background-color: var(--mainColor);
+  position: absolute;
+  top: 0;
+  left: 20px;
+  z-index: 100;
+  width: 360px;
+  display: none;
+  justify-content: space-between;
+  padding: 5px;
+  margin-top: 53px;
+}
+
+.navbar-ul .dp-container .dp-items ul li a {
+  color: var(--blackColor);
+  transition: all 0.6s ease;
+}
+.navbar-ul .dp-container .dp-items ul li a:hover::before {
+  background-color: var(--blackColor);
+}
+.navbar-ul .dp-container .dp-items ul li a:hover {
+  color: #fff;
+}
+.navbar-ul .dp-container .dp-items ul li:first-of-type a {
+  border-bottom: 1px solid #ffffff6a;
+  padding-bottom: 5px;
+}
+.navbar-ul .dp-container .dp-items .dp-item2 {
+  border-left: 1px solid #ffffff6a;
+}
+
+/* Right Menu */
 .right-menu {
   display: flex;
   flex-wrap: wrap;
@@ -211,6 +248,8 @@ body {
 .header.fixed .right-menu .adv a:hover {
   color: #fff;
 }
+/* ----- End Header Section ----- */
+
 /* ----- Start Sign Up Form ----- */
 .sign-up-form {
   position: absolute;
@@ -375,8 +414,6 @@ body {
 }
 /* ----- End Sign Up Form ----- */
 
-/* ----- End Header Section ----- */
-
 /* ----- Start Hero Section ----- */
 .hero {
   height: 100vh;
@@ -399,8 +436,8 @@ body {
   font-size: 40px;
   text-transform: capitalize;
   opacity: 0;
-  animation: heroCont 1s ease forwards;
-  animation-delay: 1.2s;
+  animation: heroCont 3s ease forwards;
+  animation-delay: 3.2s;
 }
 .hero-content h1 span {
   color: var(--mainColor);
@@ -411,8 +448,8 @@ body {
   color: rgb(212, 212, 212);
   line-height: 1.6;
   opacity: 0;
-  animation: heroCont 1.2s ease forwards;
-  animation-delay: 1.4s;
+  animation: heroCont 3.2s ease forwards;
+  animation-delay: 3.4s;
 }
 .hero-content a {
   padding: 10px 20px;
@@ -424,8 +461,8 @@ body {
   font-weight: 400;
   border-radius: 5px;
   opacity: 0;
-  animation: heroCont 1.4s ease forwards;
-  animation-delay: 1.6s;
+  animation: heroCont 3.4s ease forwards;
+  animation-delay: 3.6s;
   transition: background-color 0.5s ease;
 }
 .hero-content a:hover {
@@ -537,6 +574,10 @@ body {
     display: block;
     padding: 5px 0;
   }
+  .navbar-ul .dp-container .dp-items {
+    top: -6px;
+    left: -380px;
+  }
   .sign-up-form {
     left: 25%;
     width: 50%;
@@ -554,6 +595,10 @@ body {
     width: 75%;
   }
 }
+.navbar-ul .dp-container .dp-items {
+  display: block;
+}
+
 @media (max-width: 600px) {
   .right-menu .adv {
     display: none;

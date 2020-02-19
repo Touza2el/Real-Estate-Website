@@ -10,10 +10,17 @@
   </head>
   <body>
     <div id="header-hero-container">
+      <!-- ----- Start Hamburger Menu ----- -->
+
       <div class="hamburger-menu">
         <div class="div1"></div>
         <div class="div2"></div>
       </div>
+
+      <!-- ----- End Hamburger Menu ----- -->
+
+      <!-- ----- Start Header Section ----- -->
+
       <header class="header">
         <div class="container">
           <div class="flex">
@@ -23,7 +30,23 @@
                 <li><a href="#" class="active">home</a></li>
                 <li><a href="#">buy</a></li>
                 <li><a href="#">rent</a></li>
-                <li><a href="#">sell</a></li>
+                <li class="dp-container">
+                  <a href="#">sell</a>
+                  <div class="dp-items">
+                    <ul class="dp-item1">
+                      <li><a href="#">selling options</a></li>
+                      <li><a href="#">home values</a></li>
+                      <li><a href="#">sellers guide</a></li>
+                      <li><a href="#">find a customer</a></li>
+                    </ul>
+                    <ul class="dp-item2">
+                      <li><a href="#">home selling</a></li>
+                      <li><a href="#">learn how to sell</a></li>
+                      <li><a href="#">select an agent</a></li>
+                      <li><a href="#">explore your options</a></li>
+                    </ul>
+                  </div>
+                </li>
                 <li><a href="#">news</a></li>
                 <li><a href="#">contact</a></li>
               </ul>
@@ -36,6 +59,11 @@
           </div>
         </div>
       </header>
+
+      <!-- ----- End Header Section ----- -->
+
+      <!-- ----- Start Hero Section ----- -->
+
       <section class="hero">
         <div class="flex">
           <div class="hero-content">
@@ -57,9 +85,15 @@
           <span class="icon-line"></span>
         </div>
       </section>
+
+      <!-- ----- End Hero Section ----- -->
     </div>
+
+    <!-- ----- Start Sign Up Form ----- -->
+
     <div class="sign-up-form">
       <i class="fas fa-times fa-lg form-close-btn"></i>
+      <!-- Sign Up Box -->
       <div class="form-container">
         <div class="form-head">
           <h2 class="form-title">
@@ -94,6 +128,7 @@
           </button>
         </div>
       </div>
+      <!-- New Account Box -->
       <div class="register-container">
         <h2>register new account</h2>
         <input type="text" placeholder="first name" />
@@ -105,6 +140,8 @@
         <button class="new-account-btn">create account</button>
       </div>
     </div>
+
+    <!-- ----- End Sign Up Form ----- -->
     <script src="js/main.js"></script>
   </body>
 </html>
